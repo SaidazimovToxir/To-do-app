@@ -69,17 +69,8 @@ class PlanWidget extends StatelessWidget {
                   color: Colors.grey,
                 )),
             IconButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    return DeleteDialog(
-                      onDeleted: onDeleted,
-                    );
-                  },
-                );
-              },
-              icon: const Icon(Icons.delete, color: Colors.red),
+              onPressed: onDeleted,
+              icon: const Icon(Icons.delete, color: Colors.redAccent),
             ),
           ],
         ),

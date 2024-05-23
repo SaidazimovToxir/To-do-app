@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homework41/controller/todo_controller.dart';
 import 'package:homework41/views/widgets/add_dialog.dart';
-import 'package:homework41/views/widgets/plan_widget';
+import 'package:homework41/views/widgets/plan_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,7 +33,7 @@ class _ToDoScreenState extends State<HomePage> {
     int counter = todoController.counter();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.deepPurple,
         centerTitle: true,
         title: const Text("To Do"),
       ),
@@ -44,11 +44,11 @@ class _ToDoScreenState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                "Bajarilgan: ${todoController.todoList.length - counter}",
+                "Done: ${todoController.todoList.length - counter}",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               Text(
-                "Bajarilmagan: $counter",
+                "Not done: $counter",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
             ],
@@ -69,8 +69,9 @@ class _ToDoScreenState extends State<HomePage> {
           ),
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.deepPurple,
         onPressed: () async {
           Map<String, dynamic>? data = await showDialog(
             context: context,

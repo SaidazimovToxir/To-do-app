@@ -2,9 +2,9 @@ import 'package:homework41/models/todo_model.dart';
 
 class TodoController {
   final _todoList = [
-    TodoModel(title: "Running", date: "12:20", checkDone: false),
-    TodoModel(title: "Exercise", date: "Tomorrow", checkDone: false),
-    TodoModel(title: "Swimming", date: "4:00", checkDone: false),
+    TodoModel(title: "Mardon", date: "12:20", checkDone: false),
+    TodoModel(title: "Akrom", date: "Tomorrow", checkDone: false),
+    TodoModel(title: "Abdulloh", date: "4:00", checkDone: false),
   ];
 
   List<TodoModel> get todoList {
