@@ -101,7 +101,11 @@ class _AddDialogState extends State<AddDialog> {
         ),
         ElevatedButton(
           onPressed: _add,
-          child: const Text("Save"),
+          child: const Text(
+            "Save",
+            style: TextStyle(color: Colors.white),
+          ),
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
         ),
       ],
     );

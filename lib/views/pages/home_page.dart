@@ -45,11 +45,17 @@ class _ToDoScreenState extends State<HomePage> {
             children: [
               Text(
                 "Done: ${todoController.todoList.length - counter}",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.teal),
               ),
               Text(
                 "Not done: $counter",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.teal),
               ),
             ],
           ),
@@ -70,23 +76,32 @@ class _ToDoScreenState extends State<HomePage> {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepPurple,
-        onPressed: () async {
-          Map<String, dynamic>? data = await showDialog(
-            context: context,
-            builder: (context) {
-              return AddDialog();
-            },
-          );
-          if (data != null) {
-            todoController.add(data["title"], data["date"]);
-          }
-          setState(() {});
-        },
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            FloatingActionButton(
+              backgroundColor: Colors.deepPurple,
+              onPressed: () async {
+                Map<String, dynamic>? data = await showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AddDialog();
+                  },
+                );
+                if (data != null) {
+                  todoController.add(data["title"], data["date"]);
+                }
+                setState(() {});
+              },
+              child: const Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
+            ),
+          ],
         ),
       ),
     );
