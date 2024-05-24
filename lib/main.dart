@@ -5,6 +5,8 @@ void main() {
   runApp(const MainRunner());
 }
 
+/// [Saidazimov Tohir]
+
 class MainRunner extends StatelessWidget {
   const MainRunner({super.key});
 
